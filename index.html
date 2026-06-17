@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Tippah County Fair &amp; Livestock Show — 81st Annual | Ripley, MS</title>
+<meta name="description" content="The 81st Annual Tippah County Fair & Livestock Show, July 31 – August 8, 2026 in Ripley, Mississippi. Carnival rides, livestock shows, rodeo, food, and family fun. Continuing the Tradition!" />
+<link rel="icon" href="logo.jpg" />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Bitter:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --navy:#15314f;
+    --navy-deep:#0e2237;
+    --red:#9c2b2b;
+    --red-bright:#c0392b;
+    --green:#3f6b3a;
+    --green-deep:#2e4f2b;
+    --gold:#e0a730;
+    --cream:#f6efe2;
+    --paper:#fbf6ec;
+    --ink:#23211c;
+    --shadow:0 10px 30px rgba(14,34,55,.18);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Bitter',Georgia,serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.65;
+  }
+  h1,h2,h3,h4,.display{font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.02em;}
+  a{color:var(--red);}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1100px;margin:0 auto;padding:0 22px;}
+  section{padding:72px 0;}
+
+  /* ===== Top bar ===== */
+  .topbar{
+    background:var(--navy-deep);
+    color:var(--cream);
+    font-family:'Oswald',sans-serif;
+    font-size:.82rem;
+    letter-spacing:.05em;
+  }
+  .topbar .wrap{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:6px;padding-top:8px;padding-bottom:8px;}
+  .topbar a{color:var(--gold);text-decoration:none;}
+
+  /* ===== Nav ===== */
+  header.nav{position:sticky;top:0;z-index:50;background:var(--cream);box-shadow:var(--shadow);}
+  .nav .wrap{display:flex;align-items:center;gap:16px;padding-top:10px;padding-bottom:10px;}
+  .nav .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--navy);}
+  .nav .brand img{width:54px;height:54px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,.25);}
+  .nav .brand b{font-family:'Oswald',sans-serif;font-size:1.15rem;line-height:1;color:var(--navy);}
+  .nav .brand span{display:block;font-family:'Bitter';font-size:.72rem;text-transform:none;letter-spacing:0;color:var(--green-deep);}
+  .nav nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  .nav nav a{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:.85rem;letter-spacing:.04em;
+    text-decoration:none;color:var(--navy);padding:8px 12px;border-radius:6px;transition:.2s;
+  }
+  .nav nav a:hover{background:var(--navy);color:var(--cream);}
+  .menu-btn{display:none;margin-left:auto;background:var(--navy);color:#fff;border:0;font-size:1.4rem;padding:6px 12px;border-radius:6px;cursor:pointer;}
+
+  /* ===== Hero ===== */
+  .hero{
+    position:relative;color:var(--cream);text-align:center;
+    background:linear-gradient(rgba(14,34,55,.72),rgba(14,34,55,.82)),url('gallery_ferris.jpg') center/cover no-repeat;
+    padding:90px 0 80px;
+  }
+  .hero img.logo{width:160px;height:160px;border-radius:50%;object-fit:cover;margin:0 auto 22px;box-shadow:0 8px 26px rgba(0,0,0,.45);border:4px solid var(--cream);}
+  .hero .annual{font-family:'Bitter';font-style:italic;font-size:1.3rem;color:var(--gold);}
+  .hero h1{font-size:clamp(2.4rem,6vw,4.4rem);line-height:.98;margin:6px 0 10px;text-shadow:0 3px 14px rgba(0,0,0,.5);}
+  .hero .sub{font-family:'Oswald',sans-serif;letter-spacing:.06em;font-size:1.1rem;}
+  .hero .dates{
+    display:inline-block;margin:22px 0 8px;background:var(--red-bright);
+    font-family:'Oswald',sans-serif;font-size:clamp(1.2rem,3vw,1.9rem);
+    padding:10px 26px;border-radius:8px;box-shadow:var(--shadow);
+  }
+  .hero .tagline{font-style:italic;font-size:1.15rem;margin-top:14px;color:var(--cream);}
+  .hero .ctas{margin-top:28px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;
+    letter-spacing:.05em;padding:13px 26px;border-radius:8px;font-size:.95rem;transition:.2s;cursor:pointer;border:0;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy-deep);}
+  .btn-gold:hover{background:#f2bd47;transform:translateY(-2px);}
+  .btn-outline{background:transparent;border:2px solid var(--cream);color:var(--cream);}
+  .btn-outline:hover{background:var(--cream);color:var(--navy);}
+
+  /* countdown */
+  .countdown{display:flex;gap:14px;justify-content:center;margin-top:30px;flex-wrap:wrap;}
+  .countdown div{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);border-radius:10px;padding:12px 18px;min-width:78px;}
+  .countdown b{display:block;font-family:'Oswald',sans-serif;font-size:2rem;line-height:1;}
+  .countdown span{font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);}
+
+  /* ===== Section headers ===== */
+  .sec-head{text-align:center;margin-bottom:46px;}
+  .sec-head h2{font-size:clamp(1.8rem,4vw,2.7rem);color:var(--navy);}
+  .sec-head .kicker{font-family:'Oswald',sans-serif;letter-spacing:.18em;color:var(--red);text-transform:uppercase;font-size:.9rem;}
+  .sec-head .rule{width:80px;height:4px;background:var(--gold);margin:14px auto 0;border-radius:2px;}
+
+  /* ===== About ===== */
+  #about{background:var(--cream);}
+  .about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:46px;align-items:center;}
+  .about-grid p{margin-bottom:16px;font-size:1.05rem;}
+  .about-grid img{border-radius:14px;box-shadow:var(--shadow);}
+  .badges{display:flex;gap:14px;flex-wrap:wrap;margin-top:22px;}
+  .badge{background:var(--green-deep);color:var(--cream);font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:.8rem;letter-spacing:.05em;padding:9px 15px;border-radius:30px;}
+
+  /* ===== Livestock cards ===== */
+  #livestock{background:var(--navy);color:var(--cream);}
+  #livestock .sec-head h2{color:var(--cream);}
+  .stock-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .stock-card{border-radius:12px;padding:30px 24px;text-align:center;box-shadow:var(--shadow);color:#fff;position:relative;overflow:hidden;}
+  .stock-card.red{background:linear-gradient(160deg,#a83232,#7a1f1f);}
+  .stock-card.green{background:linear-gradient(160deg,#43723c,#2c4d28);}
+  .stock-card.blue{background:linear-gradient(160deg,#1e4570,#142f4d);}
+  .stock-card .ico{font-size:2.4rem;margin-bottom:8px;}
+  .stock-card h3{font-size:1.4rem;line-height:1.05;margin-bottom:14px;}
+  .stock-card .date{font-family:'Oswald',sans-serif;font-size:1.05rem;letter-spacing:.03em;color:var(--gold);}
+  .stock-card .loc{font-size:.95rem;margin-top:8px;opacity:.9;}
+
+  /* ===== Schedule ===== */
+  #schedule{background:var(--paper);}
+  .day-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:30px;}
+  .day-tabs button{
+    font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;font-size:.85rem;
+    border:2px solid var(--navy);background:transparent;color:var(--navy);padding:8px 14px;border-radius:30px;cursor:pointer;transition:.2s;
+  }
+  .day-tabs button:hover{background:var(--navy);color:var(--cream);}
+  .day-tabs button.active{background:var(--navy);color:var(--cream);}
+  .day-tabs button.free{border-color:var(--green);}
+  .day-tabs button.free.active,.day-tabs button.free:hover{background:var(--green);border-color:var(--green);color:#fff;}
+
+  .day-panel{display:none;max-width:760px;margin:0 auto;background:#fff;border-radius:14px;box-shadow:var(--shadow);overflow:hidden;}
+  .day-panel.active{display:block;}
+  .day-panel .day-top{background:var(--navy);color:var(--cream);padding:20px 26px;}
+  .day-panel .day-top h3{font-size:1.7rem;}
+  .day-panel .day-top .gates{font-family:'Oswald',sans-serif;letter-spacing:.04em;color:var(--gold);font-size:.95rem;margin-top:2px;}
+  .day-panel .day-top.freeday{background:var(--green-deep);}
+  .day-panel .day-top .tag{display:inline-block;background:var(--gold);color:var(--navy-deep);font-family:'Oswald',sans-serif;font-size:.7rem;letter-spacing:.1em;padding:3px 10px;border-radius:20px;margin-top:8px;text-transform:uppercase;}
+  .events{list-style:none;padding:10px 0;}
+  .events li{display:flex;gap:18px;padding:14px 26px;border-bottom:1px solid #efe7d6;}
+  .events li:last-child{border-bottom:0;}
+  .events .time{flex:0 0 110px;font-family:'Oswald',sans-serif;font-weight:600;color:var(--red);letter-spacing:.02em;}
+  .events .ev b{display:block;font-family:'Oswald',sans-serif;font-weight:600;font-size:1.05rem;color:var(--navy);text-transform:uppercase;letter-spacing:.02em;}
+  .events .ev span{font-size:.92rem;color:#5a5648;}
+
+  /* ===== Admission ===== */
+  #admission{background:var(--green-deep);color:var(--cream);}
+  #admission .sec-head h2{color:var(--cream);}
+  .adm-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  .adm-card{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.18);border-radius:14px;padding:28px 30px;}
+  .adm-card h3{color:var(--gold);font-size:1.5rem;margin-bottom:16px;}
+  .price-row{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,.2);}
+  .price-row:last-child{border-bottom:0;}
+  .price-row .d{font-family:'Bitter';}
+  .price-row .p{font-family:'Oswald',sans-serif;color:var(--gold);font-size:1.05rem;}
+  .free-note{margin-top:18px;background:var(--gold);color:var(--navy-deep);border-radius:10px;padding:14px 18px;font-family:'Oswald',sans-serif;letter-spacing:.03em;}
+  .free-note b{display:block;font-size:1.05rem;margin-bottom:4px;}
+  .adm-foot{text-align:center;margin-top:30px;font-family:'Oswald',sans-serif;letter-spacing:.06em;font-size:1.15rem;color:var(--gold);}
+
+  /* ===== Gallery ===== */
+  #gallery{background:var(--cream);}
+  .gal{position:relative;border-radius:16px;overflow:hidden;box-shadow:var(--shadow);}
+  .gal img{width:100%;height:auto;}
+  .gal .cap{position:absolute;left:0;bottom:0;right:0;background:linear-gradient(transparent,rgba(14,34,55,.85));color:var(--cream);padding:40px 26px 20px;font-family:'Oswald',sans-serif;letter-spacing:.04em;}
+
+  /* ===== Facebook updates ===== */
+  #updates{background:var(--navy-deep);color:var(--cream);}
+  #updates .sec-head h2{color:var(--cream);}
+  .fb-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:start;}
+  .fb-embed{background:#fff;border-radius:14px;overflow:hidden;box-shadow:var(--shadow);min-height:500px;}
+  .fb-side h3{color:var(--gold);font-size:1.5rem;margin-bottom:10px;}
+  .fb-side p{margin-bottom:18px;}
+  .fb-side .fb-btn{display:inline-flex;align-items:center;gap:10px;background:#1877f2;color:#fff;text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:13px 22px;border-radius:8px;}
+  .fb-side .fb-btn:hover{background:#0d65d9;}
+
+  /* ===== Contact ===== */
+  #contact{background:var(--paper);}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:stretch;}
+  .contact-card{background:#fff;border-radius:14px;box-shadow:var(--shadow);padding:32px 34px;}
+  .contact-card h3{color:var(--navy);font-size:1.4rem;margin-bottom:18px;}
+  .contact-line{display:flex;gap:14px;align-items:flex-start;padding:12px 0;border-bottom:1px solid #eee3cf;}
+  .contact-line:last-child{border-bottom:0;}
+  .contact-line .ico{font-size:1.4rem;}
+  .contact-line a{color:var(--red);text-decoration:none;}
+  .map{border-radius:14px;overflow:hidden;box-shadow:var(--shadow);min-height:340px;border:0;width:100%;height:100%;}
+
+  /* ===== Footer ===== */
+  footer{background:var(--navy-deep);color:var(--cream);text-align:center;padding:44px 0 30px;}
+  footer img{width:90px;height:90px;border-radius:50%;object-fit:cover;margin:0 auto 14px;border:3px solid var(--gold);}
+  footer .flinks{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin:16px 0;}
+  footer .flinks a{color:var(--gold);text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:.85rem;letter-spacing:.05em;}
+  footer small{display:block;opacity:.7;margin-top:14px;}
+
+  /* ===== Responsive ===== */
+  @media(max-width:860px){
+    .nav nav{display:none;position:absolute;top:100%;left:0;right:0;background:var(--cream);flex-direction:column;padding:10px;box-shadow:var(--shadow);}
+    .nav nav.open{display:flex;}
+    .menu-btn{display:block;}
+    .about-grid,.adm-grid,.fb-grid,.contact-grid{grid-template-columns:1fr;}
+    .stock-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Top bar -->
+<div class="topbar">
+  <div class="wrap">
+    <span>📍 Tippah County Coliseum &amp; Fairgrounds — 10791 MS-15, Ripley, MS 38663</span>
+    <span>📞 <a href="tel:+16628374948">(662) 837-4948</a></span>
+  </div>
+</div>
+
+<!-- Nav -->
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <img src="logo.jpg" alt="Tippah County Fair logo" />
+      <b>Tippah County Fair<span>&amp; Livestock Show · Ripley, MS</span></b>
+    </a>
+    <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navmenu').classList.toggle('open')">☰</button>
+    <nav id="navmenu">
+      <a href="#about">About</a>
+      <a href="#livestock">Livestock</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#admission">Admission</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#updates">Updates</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <img class="logo" src="logo.jpg" alt="Tippah County Fair &amp; Livestock Show" />
+    <div class="annual">81st Annual</div>
+    <h1>Tippah County Fair<br>&amp; Livestock Show</h1>
+    <div class="sub">Ripley, Mississippi</div>
+    <div class="dates">July 31 – August 8, 2026</div>
+    <p class="tagline">"Continuing the Tradition!" — One admission gets you into all events!</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="#schedule">View Full Schedule</a>
+      <a class="btn btn-outline" href="#admission">Admission &amp; Rides</a>
+    </div>
+    <div class="countdown" id="countdown" aria-label="Countdown to the fair"></div>
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Come for the tradition · Stay for the memories</div>
+      <h2>About the Fair</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="about-grid">
+      <div>
+        <p>For 81 years, the <b>Tippah County Fair &amp; Livestock Show</b> has been the highlight of summer in Ripley, Mississippi. Hosted at the Tippah County Coliseum &amp; Fairgrounds, the fair brings together families, farmers, and friends from all across the region.</p>
+        <p>From carnival rides that light up the night sky to championship livestock shows, a rodeo, live music, contests, and unforgettable fair food — there's something for everyone. Best of all, <b>one admission gets you into all events</b> each day.</p>
+        <p>Join us July 31 – August 8, 2026 as we continue the tradition!</p>
+        <div class="badges">
+          <span class="badge">🎡 Carnival Rides</span>
+          <span class="badge">🐄 Livestock Shows</span>
+          <span class="badge">🤠 Rodeo</span>
+          <span class="badge">🎶 Live Music</span>
+          <span class="badge">🍔 Great Food</span>
+        </div>
+      </div>
+      <img src="gallery_ferris.jpg" alt="Ferris wheel and carnival rides at the Tippah County Fair at sunset" />
+    </div>
+  </div>
+</section>
+
+<!-- Livestock shows -->
+<section id="livestock">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Mark your calendar</div>
+      <h2>Livestock Shows</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="stock-grid">
+      <div class="stock-card red">
+        <div class="ico">🐂</div>
+        <h3>Cary Childs Memorial Cattle Show</h3>
+        <div class="date">Saturday, August 1, 2026</div>
+        <div class="loc">Tippah County Coliseum</div>
+      </div>
+      <div class="stock-card green">
+        <div class="ico">🐑</div>
+        <h3>Open Junior Lamb &amp; Goat Show</h3>
+        <div class="date">Saturday, August 8, 2026</div>
+        <div class="loc">Coliseum Side Shed / North Barn</div>
+      </div>
+      <div class="stock-card blue">
+        <div class="ico">🐄</div>
+        <h3>Open Junior Dairy Cattle Show</h3>
+        <div class="date">Saturday, August 8, 2026</div>
+        <div class="loc">Tippah County Coliseum</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Schedule -->
+<section id="schedule">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">9 days of fun</div>
+      <h2>Daily Schedule</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="day-tabs" id="dayTabs"></div>
+    <div id="dayPanels"></div>
+  </div>
+</section>
+
+<!-- Admission -->
+<section id="admission">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">One admission · all events</div>
+      <h2>Admission &amp; Rides</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="adm-grid">
+      <div class="adm-card">
+        <h3>🎟️ Gate Admission</h3>
+        <div class="price-row"><span class="d">Fri, July 31 &amp; Sat, Aug 1</span><span class="p">$8 / person</span></div>
+        <div class="price-row"><span class="d">Mon, Aug 3 · Tue, Aug 4 · Wed, Aug 5</span><span class="p">FREE</span></div>
+        <div class="price-row"><span class="d">Thurs, Aug 6 (Youth Night)</span><span class="p">$5 / person</span></div>
+        <div class="price-row"><span class="d">Fri, Aug 7</span><span class="p">$8 / person</span></div>
+        <div class="price-row"><span class="d">Fri, Aug 7 — Carload</span><span class="p">$25</span></div>
+        <div class="price-row"><span class="d">Fri, Aug 7 — Vanload</span><span class="p">$40</span></div>
+        <div class="price-row"><span class="d">Sat, Aug 8</span><span class="p">$8 / person</span></div>
+        <div class="free-note">
+          <b>★ Free Admission Days ★</b>
+          Monday, Aug 3 · Tuesday, Aug 4 · Wednesday, Aug 5
+        </div>
+      </div>
+      <div class="adm-card">
+        <h3>🎡 Ride All You Want</h3>
+        <div class="price-row"><span class="d">Friday, July 31</span><span class="p">$25</span></div>
+        <div class="price-row"><span class="d">Saturday, Aug 1</span><span class="p">$25</span></div>
+        <div class="price-row"><span class="d">Monday, Aug 3</span><span class="p">$20</span></div>
+        <div class="price-row"><span class="d">Tuesday, Aug 4</span><span class="p">$20</span></div>
+        <div class="price-row"><span class="d">Thursday, Aug 6 (Youth Night)</span><span class="p">$15</span></div>
+        <div class="price-row"><span class="d">Friday, Aug 7</span><span class="p">$25</span></div>
+        <div class="price-row"><span class="d">Saturday, Aug 8</span><span class="p">$25</span></div>
+        <div class="free-note">
+          <b>🎠 Ride All You Want!</b>
+          Unlimited carnival rides with a wristband on ride days.
+        </div>
+      </div>
+    </div>
+    <div class="adm-foot">Livestock Shows · Carnival Rides · Great Food · Unforgettable Memories!</div>
+  </div>
+</section>
+
+<!-- Gallery -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">See you at the fair</div>
+      <h2>Gallery</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="gal">
+      <img src="gallery_ferris.jpg" alt="Sunset over the midway, ferris wheel and carnival rides at the Tippah County Fair" />
+      <div class="cap">Sunset over the midway — Tippah County Fairgrounds, Ripley, MS</div>
+    </div>
+  </div>
+</section>
+
+<!-- Facebook updates -->
+<section id="updates">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Straight from the source</div>
+      <h2>Latest Updates from Facebook</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="fb-grid">
+      <div class="fb-side">
+        <h3>Stay in the loop</h3>
+        <p>The latest announcements, schedule changes, photos, and event news are posted directly to the official Tippah County Fair Facebook page. The live feed to the right updates automatically.</p>
+        <p>Follow us so you never miss an announcement!</p>
+        <a class="fb-btn" href="https://www.facebook.com/tippahcountyfair" target="_blank" rel="noopener">📘 Follow on Facebook</a>
+      </div>
+      <div class="fb-embed">
+        <iframe
+          title="Tippah County Fair Facebook feed"
+          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftippahcountyfair&tabs=timeline&width=500&height=720&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+          width="100%" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
+          allowfullscreen="true"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+        </iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="kicker">Find us · Reach us</div>
+      <h2>Location &amp; Contact</h2>
+      <div class="rule"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Tippah County Fair &amp; Livestock Show</h3>
+        <div class="contact-line"><span class="ico">📍</span><span><b>Tippah County Coliseum &amp; Fairgrounds</b><br>10791 MS-15, Ripley, MS 38663</span></div>
+        <div class="contact-line"><span class="ico">📞</span><span><a href="tel:+16628374948">(662) 837-4948</a></span></div>
+        <div class="contact-line"><span class="ico">📘</span><span><a href="https://www.facebook.com/tippahcountyfair" target="_blank" rel="noopener">facebook.com/tippahcountyfair</a></span></div>
+        <div class="contact-line"><span class="ico">🗓️</span><span><b>81st Annual Fair:</b> July 31 – August 8, 2026</span></div>
+      </div>
+      <iframe class="map" title="Map to Tippah County Fairgrounds"
+        src="https://www.google.com/maps?q=10791+MS-15,+Ripley,+MS+38663&output=embed"
+        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="wrap">
+    <img src="logo.jpg" alt="Tippah County Fair logo" />
+    <div class="display" style="font-size:1.3rem;letter-spacing:.05em;">See you at the Fair!</div>
+    <div class="flinks">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#admission">Admission</a>
+      <a href="#updates">Updates</a>
+      <a href="https://www.facebook.com/tippahcountyfair" target="_blank" rel="noopener">Facebook</a>
+      <a href="tel:+16628374948">(662) 837-4948</a>
+    </div>
+    <small>Tippah County Coliseum &amp; Fairgrounds · 10791 MS-15, Ripley, MS 38663<br>
+    © 2026 Tippah County Fair Association · Continuing the Tradition.</small>
+  </div>
+</footer>
+
+<!-- Facebook SDK (for embedded feed) -->
+<div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
+
+<script>
+/* ===== Schedule data ===== */
+const schedule = [
+  {day:"Friday", date:"July 31", gates:"Gates open at 4 PM", free:false, events:[
+    {t:"6:00 PM", n:"Fairest of the Fair", w:"Program Hall — Girls ages 7–21 years only"},
+    {t:"7:30 PM", n:"EPW Wrestling", w:"Outdoor Arena"},
+  ]},
+  {day:"Saturday", date:"August 1", gates:"Gates open at 3 PM", free:false, events:[
+    {t:"8 AM–1 PM", n:"Registration of All Exhibits", w:""},
+    {t:"10:00 AM", n:"Beef Show", w:"Coliseum"},
+    {t:"3:00 PM", n:"Official Judging of All Exhibits", w:""},
+    {t:"6:00 PM", n:"Open Pony Pulling", w:"Pony Pulling Arena"},
+    {t:"6:00 PM", n:"Open Horse Show", w:"Outdoor Arena"},
+    {t:"6:00 PM", n:"Fairest of the Fair", w:"Program Hall — younger age divisions"},
+    {t:"6:00 PM", n:"El Gallo Show", w:"Open Shed"},
+  ]},
+  {day:"Monday", date:"August 3", gates:"Gates open at 5 PM", free:true, events:[
+    {t:"4–6:00 PM", n:"Registration of Poultry Exhibits", w:"Pet Barn"},
+    {t:"7:00 PM", n:"Open Junior Archery Shoot", w:"Coliseum"},
+    {t:"7:00 PM", n:"Corn Hole Tournament", w:"Program Hall"},
+  ]},
+  {day:"Tuesday", date:"August 4", gates:"Gates open at 5 PM", free:true, events:[
+    {t:"6:30 PM", n:"Pet Show", w:"North Barn"},
+  ]},
+  {day:"Wednesday", date:"August 5", gates:"Gates open at 5 PM", free:true, events:[
+    {t:"6:00 PM", n:"Faith at the Fair", w:"Outdoor Arena"},
+  ]},
+  {day:"Thursday", date:"August 6", gates:"Youth Night — Gate $5 · Ride All You Want $15", free:false, events:[
+    {t:"4:00 PM", n:"Gates Open", w:""},
+    {t:"5:00 PM", n:"Greased Pole Registration", w:""},
+    {t:"5:30 PM", n:"Greased Pole Contest", w:""},
+    {t:"6:00 PM", n:"Student and Teacher Raffle", w:"Winners must be present"},
+    {t:"6:00 PM", n:"Cheer Showcase", w:""},
+    {t:"After", n:"Barnyard Scramble", w:"Coliseum — immediately following"},
+  ]},
+  {day:"Friday", date:"August 7", gates:"Gates open at 4 PM · $8/person, $25 carload, $40 vanload · Rides $25", free:false, events:[
+    {t:"7:00 PM", n:"Talent Contest", w:"Program Hall"},
+    {t:"8:00 PM", n:"Rodeo", w:"Outside Arena"},
+  ]},
+  {day:"Saturday", date:"August 8", gates:"Gates open at 3 PM", free:false, events:[
+    {t:"9–10:00 AM", n:"Exhibits Pick-up", w:"Industrial Building"},
+    {t:"11:00 AM", n:"Lamb &amp; Goat Show", w:"North Barn"},
+    {t:"1:00 PM", n:"Open Dairy Show", w:"Coliseum"},
+    {t:"5:00 PM", n:"Bluegrass &amp; Gospel Show", w:"Program Hall"},
+    {t:"6:00 PM", n:"Open Pony Pulling", w:"Pony Pulling Arena"},
+    {t:"8:00 PM", n:"Rodeo", w:"Outside Arena"},
+  ]},
+];
+
+const tabs = document.getElementById('dayTabs');
+const panels = document.getElementById('dayPanels');
+schedule.forEach((d,i)=>{
+  const btn = document.createElement('button');
+  btn.className = 'tab' + (d.free?' free':'') + (i===0?' active':'');
+  btn.innerHTML = d.day.slice(0,3)+' '+d.date.replace('August','Aug').replace('July','Jul');
+  btn.onclick = ()=>{
+    document.querySelectorAll('.day-tabs button').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.day-panel').forEach(p=>p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById('panel'+i).classList.add('active');
+  };
+  tabs.appendChild(btn);
+
+  const panel = document.createElement('div');
+  panel.className = 'day-panel' + (i===0?' active':'');
+  panel.id = 'panel'+i;
+  let li = d.events.map(e=>`<li><span class="time">${e.t}</span><span class="ev"><b>${e.n}</b>${e.w?`<span>${e.w}</span>`:''}</span></li>`).join('');
+  panel.innerHTML = `
+    <div class="day-top ${d.free?'freeday':''}">
+      <h3>${d.day}, ${d.date}, 2026</h3>
+      <div class="gates">${d.gates}</div>
+      ${d.free?'<span class="tag">★ Free Admission Day</span>':''}
+    </div>
+    <ul class="events">${li}</ul>`;
+  panels.appendChild(panel);
+});
+
+/* ===== Countdown ===== */
+const target = new Date("2026-07-31T16:00:00-05:00").getTime();
+const cd = document.getElementById('countdown');
+function tick(){
+  const now = Date.now();
+  let diff = Math.max(0, target - now);
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor(diff%86400000/3600000);
+  const m = Math.floor(diff%3600000/60000);
+  const s = Math.floor(diff%60000/1000);
+  if(diff<=0){ cd.innerHTML = '<div style="min-width:auto"><b>The Fair is here!</b></div>'; return; }
+  cd.innerHTML =
+    `<div><b>${d}</b><span>Days</span></div>
+     <div><b>${h}</b><span>Hours</span></div>
+     <div><b>${m}</b><span>Minutes</span></div>
+     <div><b>${s}</b><span>Seconds</span></div>`;
+}
+tick(); setInterval(tick,1000);
+
+/* close mobile menu on click */
+document.querySelectorAll('#navmenu a').forEach(a=>a.onclick=()=>document.getElementById('navmenu').classList.remove('open'));
+</script>
+</body>
+</html>
