@@ -175,6 +175,20 @@
   .fb-side p{margin-bottom:18px;}
   .fb-side .fb-btn{display:inline-flex;align-items:center;gap:10px;background:#1877f2;color:#fff;text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:13px 22px;border-radius:8px;}
   .fb-side .fb-btn:hover{background:#0d65d9;}
+  .fb-embed .fb-page,.fb-embed iframe{width:100%!important;}
+  /* Fallback "latest updates" shown when Facebook's plugin is blocked by the browser */
+  .fb-fallback{padding:22px;}
+  .fb-fallback .fbf-head{display:flex;align-items:center;gap:10px;border-bottom:2px solid #eee;padding-bottom:14px;margin-bottom:6px;}
+  .fb-fallback .fbf-head img{width:46px;height:46px;border-radius:50%;}
+  .fb-fallback .fbf-head b{font-family:'Oswald',sans-serif;color:var(--navy);font-size:1.05rem;line-height:1.1;}
+  .fb-fallback .fbf-head span{display:block;font-family:'Bitter';font-size:.78rem;color:#1877f2;text-transform:none;letter-spacing:0;}
+  .fb-post{padding:15px 4px;border-bottom:1px solid #eee;color:var(--ink);}
+  .fb-post:last-of-type{border-bottom:0;}
+  .fb-post .meta{font-family:'Oswald',sans-serif;font-size:.72rem;letter-spacing:.06em;color:#8a8472;text-transform:uppercase;}
+  .fb-post b{display:block;font-family:'Oswald',sans-serif;color:var(--navy);font-size:1rem;margin:2px 0 3px;text-transform:none;}
+  .fb-post p{font-size:.92rem;color:#4f4b40;margin:0;}
+  .fb-fallback .fbf-cta{display:block;text-align:center;margin-top:16px;background:#1877f2;color:#fff;text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.04em;padding:12px;border-radius:8px;}
+  .fb-fallback .fbf-cta:hover{background:#0d65d9;}
 
   /* ===== Contact ===== */
   #contact{background:var(--paper);}
@@ -393,14 +407,44 @@
         <p>Follow us so you never miss an announcement!</p>
         <a class="fb-btn" href="https://www.facebook.com/tippahcountyfair" target="_blank" rel="noopener">📘 Follow on Facebook</a>
       </div>
-      <div class="fb-embed">
-        <iframe
-          title="Tippah County Fair Facebook feed"
-          src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Ftippahcountyfair&tabs=timeline&width=500&height=720&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
-          width="100%" height="720" style="border:none;overflow:hidden" scrolling="no" frameborder="0"
-          allowfullscreen="true"
-          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
-        </iframe>
+      <div class="fb-embed" id="fbEmbed">
+        <!-- Primary: official Facebook Page Plugin (renders where the browser allows Facebook) -->
+        <div class="fb-page"
+             data-href="https://www.facebook.com/tippahcountyfair"
+             data-tabs="timeline"
+             data-width="500"
+             data-height="720"
+             data-small-header="false"
+             data-adapt-container-width="true"
+             data-hide-cover="false"
+             data-show-facepile="true">
+          <blockquote cite="https://www.facebook.com/tippahcountyfair" class="fb-xfbml-parse-ignore">
+            <a href="https://www.facebook.com/tippahcountyfair">Tippah County Fair</a>
+          </blockquote>
+        </div>
+        <!-- Fallback: shown automatically if the browser blocks Facebook's plugin -->
+        <div class="fb-fallback" id="fbFallback" hidden>
+          <div class="fbf-head">
+            <img src="logo.jpg" alt="Tippah County Fair" />
+            <b>Tippah County Fair<span>@tippahcountyfair</span></b>
+          </div>
+          <div class="fb-post">
+            <div class="meta">Save the date</div>
+            <b>81st Annual Fair — July 31 to August 8, 2026</b>
+            <p>Nine days of rides, livestock shows, rodeo, music, and food. One admission gets you into all events!</p>
+          </div>
+          <div class="fb-post">
+            <div class="meta">Free admission</div>
+            <b>Free Gate Mon–Wed, Aug 3–5</b>
+            <p>Bring the whole family — gates are free Monday through Wednesday. Rides available with a wristband.</p>
+          </div>
+          <div class="fb-post">
+            <div class="meta">Don't miss</div>
+            <b>Rodeo + Talent Contest Weekend</b>
+            <p>Talent Contest Fri, Aug 7 · Rodeo Fri &amp; Sat nights in the Outdoor Arena. Youth Night is Thursday, Aug 6!</p>
+          </div>
+          <a class="fbf-cta" href="https://www.facebook.com/tippahcountyfair" target="_blank" rel="noopener">See all the latest posts on Facebook →</a>
+        </div>
       </div>
     </div>
   </div>
@@ -450,6 +494,29 @@
 <!-- Facebook SDK (for embedded feed) -->
 <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v19.0"></script>
+<script>
+/* If Facebook's Page Plugin is blocked (third-party cookies disabled, tracker
+   blockers, or SDK failing to load), reveal the styled fallback so the section
+   is never blank. The SDK injects an <iframe> into .fb-page on success. */
+(function(){
+  function checkFacebook(){
+    var embed = document.getElementById('fbEmbed');
+    if(!embed) return;
+    var iframe = embed.querySelector('.fb-page iframe');
+    var rendered = iframe && iframe.offsetHeight > 120;
+    if(!rendered){
+      var page = embed.querySelector('.fb-page');
+      if(page) page.style.display = 'none';
+      var fb = document.getElementById('fbFallback');
+      if(fb) fb.hidden = false;
+    }
+  }
+  // Give the SDK time to load and render, then verify.
+  window.addEventListener('load', function(){ setTimeout(checkFacebook, 4000); });
+  // If the SDK script itself fails to load at all, show fallback sooner.
+  window.fbAsyncInit = window.fbAsyncInit || function(){};
+})();
+</script>
 
 <script>
 /* ===== Schedule data ===== */
