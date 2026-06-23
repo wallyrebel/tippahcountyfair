@@ -148,6 +148,24 @@ a.stock-card:hover .more{background:var(--gold);color:var(--navy-deep);border-co
 .backlink{display:inline-block;margin-top:22px;color:var(--cream);text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.85rem;border-bottom:1px solid rgba(246,239,226,.4);}
 .backlink:hover{color:var(--gold);}
 
+/* ===== Open Horse Show ===== */
+#horseshow{background:linear-gradient(160deg,#2c2218,#16110b);color:var(--cream);}
+#horseshow .sec-head h2{color:#fff;}
+#horseshow .sec-head .kicker{color:var(--gold);}
+.hs-fees{display:flex;flex-wrap:wrap;justify-content:center;gap:18px;margin:0 auto 36px;max-width:760px;}
+.hs-fee{flex:1 1 240px;background:rgba(224,167,48,.12);border:1px solid rgba(224,167,48,.4);border-radius:12px;padding:18px 22px;text-align:center;}
+.hs-fee .l{font-family:'Oswald',sans-serif;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);}
+.hs-fee .v{font-family:'Oswald',sans-serif;font-size:1.6rem;color:#fff;}
+.hs-classes-head{font-family:'Oswald',sans-serif;color:var(--gold);font-size:1.25rem;text-transform:uppercase;letter-spacing:.04em;text-align:center;margin-bottom:18px;}
+.hs-classes{columns:2;column-gap:30px;margin-bottom:26px;}
+.hs-class{break-inside:avoid;display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.09);}
+.hs-class .num{flex:0 0 28px;height:28px;border-radius:6px;background:rgba(255,255,255,.12);color:#fff;font-family:'Oswald',sans-serif;font-size:.85rem;display:flex;align-items:center;justify-content:center;}
+.hs-class .body b{font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.01em;color:#fff;display:block;font-size:1rem;line-height:1.2;}
+.hs-class .body small{font-family:'Bitter';color:#c9bca4;font-size:.85rem;}
+.hs-class.champ .num{background:var(--gold);color:var(--navy-deep);}
+.hs-class.champ .body b{color:var(--gold);}
+@media(max-width:680px){.hs-classes{columns:1;}}
+
 /* ===== Schedule ===== */
 #schedule{background:var(--paper);}
 .day-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:30px;}
