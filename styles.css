@@ -148,6 +148,11 @@ a.stock-card:hover .more{background:var(--gold);color:var(--navy-deep);border-co
 .backlink{display:inline-block;margin-top:22px;color:var(--cream);text-decoration:none;font-family:'Oswald',sans-serif;text-transform:uppercase;letter-spacing:.05em;font-size:.85rem;border-bottom:1px solid rgba(246,239,226,.4);}
 .backlink:hover{color:var(--gold);}
 
+/* ===== Cary Childs Memorial Cattle Show ===== */
+#cattleshow{background:linear-gradient(160deg,#2c2218,#16110b);color:var(--cream);}
+#cattleshow .sec-head h2{color:#fff;}
+#cattleshow .sec-head .kicker{color:var(--gold);}
+
 /* ===== Open Horse Show ===== */
 #horseshow{background:linear-gradient(160deg,#2c2218,#16110b);color:var(--cream);}
 #horseshow .sec-head h2{color:#fff;}
