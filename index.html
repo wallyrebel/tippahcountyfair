@@ -105,15 +105,11 @@
     <button class="menu-btn" aria-label="Menu" onclick="document.getElementById('navmenu').classList.toggle('open')">☰</button>
     <nav id="navmenu">
       <a href="#about">About</a>
-      <a href="#livestock">Livestock</a>
-      <a href="cary-childs-cattle-show.html">Cattle Show</a>
-      <a href="el-gallo-show.html">El Gallo</a>
-      <a href="open-horse-show.html">Horse Show</a>
+      <a href="events.html">Events</a>
       <a href="#schedule">Schedule</a>
       <a href="#admission">Admission</a>
-      <a href="#gallery">Gallery</a>
+      <a href="fair-info.html">Fair Info</a>
       <a href="#updates">Updates</a>
-      <a href="#news">News</a>
       <a href="#contact">Contact</a>
     </nav>
   </div>
@@ -130,6 +126,7 @@
     <p class="tagline">"Continuing the Tradition!" — One admission gets you into all events!</p>
     <div class="ctas">
       <a class="btn btn-gold" href="#schedule">View Full Schedule</a>
+      <a class="btn btn-outline" href="events.html">Explore Events</a>
       <a class="btn btn-outline" href="#admission">Admission &amp; Rides</a>
     </div>
     <div class="countdown" id="countdown" aria-label="Countdown to the fair"></div>
@@ -148,14 +145,20 @@
       <div>
         <p>For 81 years, the <b>Tippah County Fair &amp; Livestock Show</b> has been the highlight of summer in Ripley, Mississippi. Hosted at the Tippah County Coliseum &amp; Fairgrounds, the fair brings together families, farmers, and friends from all across the region.</p>
         <p>From carnival rides that light up the night sky to championship livestock shows, a rodeo, live music, contests, and unforgettable fair food — there's something for everyone. Best of all, <b>one admission gets you into all events</b> each day.</p>
-        <p>Join us July 31 – August 8, 2026 as we continue the tradition!</p>
+        <p style="font-style:italic;color:var(--navy);border-left:4px solid var(--gold);padding-left:16px;">"The Tippah County Fair is more than an event. It is a tradition." <br><span style="font-family:'Oswald',sans-serif;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em;color:var(--red);font-style:normal;">— Tim Needham, Fair Board President</span></p>
         <div class="badges">
-          <span class="badge">🎡 Carnival Rides</span>
+          <span class="badge">🎡 Carnival Rides — Delta Shows</span>
           <span class="badge">🐄 Livestock Shows</span>
           <span class="badge">🤠 Rodeo</span>
           <span class="badge">🎶 Live Music</span>
+          <span class="badge">🐐 Petting Zoo</span>
+          <span class="badge">🦓 Blue Springs Safari</span>
           <span class="badge">🍔 Great Food</span>
         </div>
+        <p style="margin-top:22px;">
+          <a class="btn btn-gold" href="events.html">See All Events &amp; Competitions</a>
+          <a class="btn" style="background:var(--navy);color:#fff;margin-left:8px;" href="fair-info.html">Fair Info &amp; Leadership</a>
+        </p>
       </div>
       <img src="gallery_ferris.jpg" alt="Ferris wheel and carnival rides at the Tippah County Fair at sunset" />
     </div>
@@ -182,13 +185,13 @@
         <div class="ico">🐑</div>
         <h3>Open Junior Lamb &amp; Goat Show</h3>
         <div class="date">Saturday, August 8, 2026</div>
-        <div class="loc">Coliseum Side Shed / North Barn</div>
+        <div class="loc">Coliseum Side Shed · Show 11:00 AM</div>
       </div>
       <div class="stock-card blue">
         <div class="ico">🐄</div>
         <h3>Open Junior Dairy Cattle Show</h3>
         <div class="date">Saturday, August 8, 2026</div>
-        <div class="loc">Tippah County Coliseum</div>
+        <div class="loc">Tippah County Coliseum · Show 1:00 PM</div>
       </div>
       <a class="stock-card gold" href="el-gallo-show.html">
         <div class="ico">🐓</div>
@@ -205,6 +208,9 @@
         <div class="more">View Show Details →</div>
       </a>
     </div>
+    <p style="text-align:center;margin-top:34px;">
+      <a class="btn btn-gold" href="events.html">See All Events &amp; Competitions →</a>
+    </p>
   </div>
 </section>
 
@@ -384,11 +390,10 @@
     <div class="display" style="font-size:1.3rem;letter-spacing:.05em;">See you at the Fair!</div>
     <div class="flinks">
       <a href="#about">About</a>
+      <a href="events.html">Events</a>
       <a href="#schedule">Schedule</a>
       <a href="#admission">Admission</a>
-      <a href="cary-childs-cattle-show.html">Cattle Show</a>
-      <a href="el-gallo-show.html">El Gallo Show</a>
-      <a href="open-horse-show.html">Open Horse Show</a>
+      <a href="fair-info.html">Fair Info</a>
       <a href="#updates">Updates</a>
       <a href="https://www.facebook.com/tippahcountyfair" target="_blank" rel="noopener">Facebook</a>
       <a href="https://tippahnews.com/" target="_blank" rel="noopener">Tippah News</a>
@@ -431,8 +436,8 @@
 /* ===== Schedule data ===== */
 const schedule = [
   {day:"Friday", date:"July 31", gates:"Gates open at 4 PM", free:false, events:[
-    {t:"6:00 PM", n:"Fairest of the Fair", w:"Program Hall — Girls ages 7–21 years only"},
-    {t:"7:30 PM", n:"EPW Wrestling", w:"Outdoor Arena"},
+    {t:"6:00 PM", n:"Fairest of the Fair", w:"Program Hall — Girls ages 7–21 (pageant wear)"},
+    {t:"7:30 PM", n:"EPW Live Pro Wrestling", w:"Outdoor Arena · Summer Takeover Tour"},
   ]},
   {day:"Saturday", date:"August 1", gates:"Gates open at 3 PM", free:false, events:[
     {t:"8 AM–1 PM", n:"Registration of All Exhibits", w:""},
@@ -440,16 +445,19 @@ const schedule = [
     {t:"3:00 PM", n:"Official Judging of All Exhibits", w:""},
     {t:"5:00 PM", n:"Open Horse Show", w:"Temp Chapman Memorial Arena · Gates 3 PM · Contestants free"},
     {t:"6:00 PM", n:"Open Pony Pulling", w:"Pony Pulling Arena"},
-    {t:"6:00 PM", n:"Fairest of the Fair", w:"Program Hall — younger age divisions"},
+    {t:"6:00 PM", n:"Fairest of the Fair", w:"Program Hall — Girls ages 0–6 (Baby–Little Miss)"},
     {t:"6:00 PM", n:"El Gallo Show", w:"Open Shed (new location!) · Registration 4:00–5:45 PM · $10/class"},
   ]},
+  {day:"Sunday", date:"August 2", gates:"FAIR CLOSED · Gate admission free · Rides closed", free:false, events:[
+    {t:"—", n:"Fair Closed", w:"Rest up — gates reopen Monday at 5 PM!"},
+  ]},
   {day:"Monday", date:"August 3", gates:"Gates open at 5 PM", free:true, events:[
-    {t:"4–6:00 PM", n:"Registration of Poultry Exhibits", w:"Pet Barn"},
-    {t:"7:00 PM", n:"Open Junior Archery Shoot", w:"Coliseum"},
-    {t:"7:00 PM", n:"Corn Hole Tournament", w:"Program Hall"},
+    {t:"4–6:00 PM", n:"Poultry Exhibit Check-in", w:"Poultry Barn · 4-H Chain check-in 6 PM"},
+    {t:"6:00 PM", n:"Open 3D Archery Shoot", w:"Coliseum · Registration 5:30 PM"},
+    {t:"7:00 PM", n:"Cornhole Tournament", w:"Cary Childs Program Hall · Check-in 6:30 PM"},
   ]},
   {day:"Tuesday", date:"August 4", gates:"Gates open at 5 PM", free:true, events:[
-    {t:"6:30 PM", n:"Pet Show", w:"North Barn"},
+    {t:"6:30 PM", n:"Open Pet Show", w:"North Barn · Registration opens 6 PM"},
   ]},
   {day:"Wednesday", date:"August 5", gates:"Gates open at 5 PM", free:true, events:[
     {t:"6:00 PM", n:"Faith at the Fair", w:"Outdoor Arena"},
@@ -463,16 +471,16 @@ const schedule = [
     {t:"After", n:"Barnyard Scramble", w:"Coliseum — immediately following"},
   ]},
   {day:"Friday", date:"August 7", gates:"Gates open at 4 PM · $8/person, $25 carload, $40 vanload · Rides $25", free:false, events:[
-    {t:"7:00 PM", n:"Talent Contest", w:"Program Hall"},
-    {t:"8:00 PM", n:"Rodeo", w:"Outside Arena"},
+    {t:"7:00 PM", n:"Talent Contest", w:"Cary Childs Program Hall · Ages 5–21"},
+    {t:"8:00 PM", n:"Rodeo", w:"Temp Chapman Memorial Outdoor Arena · Bearden Pro Rodeo"},
   ]},
   {day:"Saturday", date:"August 8", gates:"Gates open at 3 PM", free:false, events:[
     {t:"9–10:00 AM", n:"Exhibits Pick-up", w:"Industrial Building"},
-    {t:"11:00 AM", n:"Lamb &amp; Goat Show", w:"North Barn"},
-    {t:"1:00 PM", n:"Open Dairy Show", w:"Coliseum"},
-    {t:"5:00 PM", n:"Bluegrass &amp; Gospel Show", w:"Program Hall"},
+    {t:"11:00 AM", n:"Lamb &amp; Goat Show", w:"Coliseum Side Shed · Check-in 9–10 AM"},
+    {t:"1:00 PM", n:"Open Dairy Show", w:"Coliseum · Weigh-in 11 AM"},
+    {t:"6:00 PM", n:"Bluegrass &amp; Gospel Show", w:"Cary Childs Program Hall · Free"},
     {t:"6:00 PM", n:"Open Pony Pulling", w:"Pony Pulling Arena"},
-    {t:"8:00 PM", n:"Rodeo", w:"Outside Arena"},
+    {t:"8:00 PM", n:"Rodeo", w:"Temp Chapman Memorial Outdoor Arena · Bearden Pro Rodeo"},
   ]},
 ];
 
